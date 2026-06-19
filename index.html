@@ -194,15 +194,15 @@
       <div class="eyebrow" data-i18n="eyebrow_gal">Mira dentro</div>
       <div class="gallery">
         <div class="pg">
-          <img src="p_llave.jpg" alt="La Llave — El alfabeto Pigpen" loading="lazy">
+          <img id="g1" src="p_llave.jpg" alt="La Llave — El alfabeto Pigpen" loading="lazy">
           <div class="cap" data-i18n="cap1">&laquo;La Llave&raquo;<br>El alfabeto que abre el c&oacute;digo.</div>
         </div>
         <div class="pg">
-          <img src="p_xvi.jpg" alt="Enseñanza XVI cifrada" loading="lazy">
+          <img id="g2" src="p_xvi.jpg" alt="Enseñanza XVI cifrada" loading="lazy">
           <div class="cap" data-i18n="cap2">Una de las 33<br>&iquest;Te atreves a descifrarla?</div>
         </div>
         <div class="pg">
-          <img src="p_xxxiii.jpg" alt="Enseñanza XXXIII cifrada" loading="lazy">
+          <img id="g3" src="p_xxxiii.jpg" alt="Enseñanza XXXIII cifrada" loading="lazy">
           <div class="cap" data-i18n="cap3">XXXIII &mdash; La &uacute;ltima.<br>La que cierra el c&oacute;digo.</div>
         </div>
       </div>
@@ -297,7 +297,8 @@
   };
   var TITLES={es:"El C\u00f3digo de los Constructores \u2014 S\u00edmbolos 360", en:"The Builders' Code \u2014 S\u00edmbolos 360"};
   var ALT={es:"El C\u00f3digo de los Constructores", en:"The Builders' Code"};
-  var IMG={es:"portada.jpg", en:"portada.jpg"};
+  var IMG={es:"portada.jpg", en:"portada_en.jpg"};
+  var GAL={es:["p_llave.jpg","p_xvi.jpg","p_xxxiii.jpg"], en:["p_llave_en.png","p_teach_en.png","p_xxxiii_en.png"]};
   var AMAZON={es:"#", en:"#"};
   var els=document.querySelectorAll('[data-i18n]');
   var ES={};
@@ -311,6 +312,7 @@
     var d=DICT[lang];
     els.forEach(function(el){ var k=el.getAttribute('data-i18n'); if(d[k]!=null) el.innerHTML=d[k]; });
     if(heroImg){ heroImg.alt=ALT[lang]; heroImg.src=IMG[lang]; }
+    var g=GAL[lang]; ['g1','g2','g3'].forEach(function(id,i){ var im=document.getElementById(id); if(im) im.src=g[i]; });
     var bt=document.getElementById('buyTop'); if(bt) bt.href=AMAZON[lang];
     var bm=document.getElementById('buyMain'); if(bm) bm.href=AMAZON[lang];
     document.querySelectorAll('.langtog button').forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-lang')===lang); });
