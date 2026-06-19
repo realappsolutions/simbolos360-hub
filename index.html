@@ -13,6 +13,7 @@
 <meta property="og:image" content="https://www.simbolos360.com/portada.jpg">
 <meta property="og:url" content="https://www.simbolos360.com/">
 <meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="El Código de los Constructores">
 <meta name="twitter:description" content="33 enseñanzas masónicas escritas en clave. Un libro que no se lee: se descifra.">
@@ -43,6 +44,10 @@
   }
   .brand svg{width:26px;height:26px}
   .brand span{font-family:'Cinzel',serif;color:var(--gold);font-size:.8rem;letter-spacing:.28em;text-transform:uppercase}
+  .langtog{position:absolute;right:16px;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:5px}
+  .langtog button{background:none;border:none;color:var(--gold-soft);opacity:.45;cursor:pointer;font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.12em;padding:3px 2px;text-transform:uppercase}
+  .langtog button.active{color:var(--gold-bright);opacity:1;font-weight:700}
+  .langtog .sep{color:var(--line);font-size:.7rem;letter-spacing:0}
   .hero{
     text-align:center;padding:46px 22px 40px;
     background:radial-gradient(130% 90% at 50% 0%, #1a232f 0%, var(--bg) 65%);
@@ -141,109 +146,192 @@
       <text x="50" y="62" font-family="Cinzel, serif" font-size="20" fill="#c2a06a" stroke="none" text-anchor="middle">G</text>
     </svg>
     <span>S&Iacute;MBOLOS 360</span>
+    <div class="langtog">
+      <button type="button" data-lang="es">ES</button><span class="sep">|</span><button type="button" data-lang="en">EN</button>
+    </div>
   </div>
 
   <header class="hero">
-    <div class="eyebrow">Edici&oacute;n de colecci&oacute;n &middot; Amazon</div>
-    <img src="portada.jpg" alt="El C&oacute;digo de los Constructores">
-    <h1>EL C&Oacute;DIGO<br>DE LOS CONSTRUCTORES</h1>
-    <div class="sub">Sabidur&iacute;a mas&oacute;nica en clave;<br>descifrala con tus propias manos.</div>
-    <div class="hook">Un libro que no se lee.<br>Se descifra.</div>
-    <a class="btn" href="#" id="buyTop">Conseguirlo en Amazon</a>
-    <span class="soon">&#9670; Disponible muy pronto &#9670;</span>
+    <div class="eyebrow" data-i18n="eyebrow_hero">Edici&oacute;n de colecci&oacute;n &middot; Amazon</div>
+    <img id="heroImg" src="portada.jpg" alt="El C&oacute;digo de los Constructores">
+    <h1 data-i18n="h1">EL C&Oacute;DIGO<br>DE LOS CONSTRUCTORES</h1>
+    <div class="sub" data-i18n="sub">Sabidur&iacute;a mas&oacute;nica en clave;<br>descifrala con tus propias manos.</div>
+    <div class="hook" data-i18n="hook">Un libro que no se lee.<br>Se descifra.</div>
+    <a class="btn" href="#" id="buyTop" data-i18n="buyTop">Conseguirlo en Amazon</a>
+    <span class="soon" data-i18n="soon_top">&#9670; Disponible muy pronto &#9670;</span>
   </header>
 
   <div class="wrap">
 
     <section>
-      <div class="eyebrow">La Obra</div>
-      <p class="lead">Durante siglos, los antiguos constructores guardaron su sabidur&iacute;a en un cifrado que el tiempo casi borr&oacute;. <em>Este libro lo rescata.</em> Treinta y tres ense&ntilde;anzas sobre el car&aacute;cter, la hermandad, el oficio, el tiempo y el legado, escritas por completo en clave. Aqu&iacute; no vas a leer: vas a descifrar, s&iacute;mbolo por s&iacute;mbolo, con tus propias manos.</p>
+      <div class="eyebrow" data-i18n="eyebrow_obra">La Obra</div>
+      <p class="lead" data-i18n="lead_obra">Durante siglos, los antiguos constructores guardaron su sabidur&iacute;a en un cifrado que el tiempo casi borr&oacute;. <em>Este libro lo rescata.</em> Treinta y tres ense&ntilde;anzas sobre el car&aacute;cter, la hermandad, el oficio, el tiempo y el legado, escritas por completo en clave. Aqu&iacute; no vas a leer: vas a descifrar, s&iacute;mbolo por s&iacute;mbolo, con tus propias manos.</p>
     </section>
 
     <section>
-      <div class="eyebrow">33 Ense&ntilde;anzas &middot; 5 Pilares</div>
+      <div class="eyebrow" data-i18n="eyebrow_pillars">33 Ense&ntilde;anzas &middot; 5 Pilares</div>
       <div class="pillars">
-        <div class="pillar"><span class="n">Car&aacute;cter</span><p>Forjar la piedra interior, golpe a golpe.</p></div>
-        <div class="pillar"><span class="n">Hermandad</span><p>El nivel ante el cual todos somos iguales.</p></div>
-        <div class="pillar"><span class="n">Oficio</span><p>El trabajo honrado como una forma de oraci&oacute;n.</p></div>
-        <div class="pillar"><span class="n">Tiempo</span><p>La piedra que solo se talla una vez.</p></div>
-        <div class="pillar full"><span class="n">Legado</span><p>Lo que dejas tallado por dentro, y arde m&aacute;s all&aacute; de ti.</p></div>
+        <div class="pillar"><span class="n" data-i18n="pn_char">Car&aacute;cter</span><p data-i18n="pt_char">Forjar la piedra interior, golpe a golpe.</p></div>
+        <div class="pillar"><span class="n" data-i18n="pn_herm">Hermandad</span><p data-i18n="pt_herm">El nivel ante el cual todos somos iguales.</p></div>
+        <div class="pillar"><span class="n" data-i18n="pn_ofi">Oficio</span><p data-i18n="pt_ofi">El trabajo honrado como una forma de oraci&oacute;n.</p></div>
+        <div class="pillar"><span class="n" data-i18n="pn_tiem">Tiempo</span><p data-i18n="pt_tiem">La piedra que solo se talla una vez.</p></div>
+        <div class="pillar full"><span class="n" data-i18n="pn_leg">Legado</span><p data-i18n="pt_leg">Lo que dejas tallado por dentro, y arde m&aacute;s all&aacute; de ti.</p></div>
       </div>
     </section>
 
     <section>
-      <div class="eyebrow">Qu&eacute; encontrar&aacute;s dentro</div>
+      <div class="eyebrow" data-i18n="eyebrow_feat">Qu&eacute; encontrar&aacute;s dentro</div>
       <div class="feat">
-        <div class="row"><span class="mk">&#9670;</span><p><strong>33 ense&ntilde;anzas en clave.</strong> Escritas &iacute;ntegramente en el cifrado de los antiguos canteros &mdash; el mismo que guard&oacute; secretos en l&aacute;pidas y registros durante siglos.</p></div>
-        <div class="row"><span class="mk">&#9670;</span><p><strong>La Llave.</strong> Una cartilla que te ense&ntilde;a a descifrar paso a paso. No necesitas saber nada de antemano.</p></div>
-        <div class="row"><span class="mk">&#9670;</span><p><strong>El Velo.</strong> Un guardi&aacute;n final y las soluciones, para el que se atreve a cruzar el umbral.</p></div>
-        <div class="row"><span class="mk">&#9670;</span><p><strong>Para curiosos, buscadores y hermanos.</strong> No hace falta ser mas&oacute;n. Solo hace falta querer descifrarlo.</p></div>
+        <div class="row"><span class="mk">&#9670;</span><p data-i18n="feat1"><strong>33 ense&ntilde;anzas en clave.</strong> Escritas &iacute;ntegramente en el cifrado de los antiguos canteros &mdash; el mismo que guard&oacute; secretos en l&aacute;pidas y registros durante siglos.</p></div>
+        <div class="row"><span class="mk">&#9670;</span><p data-i18n="feat2"><strong>La Llave.</strong> Una cartilla que te ense&ntilde;a a descifrar paso a paso. No necesitas saber nada de antemano.</p></div>
+        <div class="row"><span class="mk">&#9670;</span><p data-i18n="feat3"><strong>El Velo.</strong> Un guardi&aacute;n final y las soluciones, para el que se atreve a cruzar el umbral.</p></div>
+        <div class="row"><span class="mk">&#9670;</span><p data-i18n="feat4"><strong>Para curiosos, buscadores y hermanos.</strong> No hace falta ser mas&oacute;n. Solo hace falta querer descifrarlo.</p></div>
       </div>
     </section>
 
     <!-- MIRA DENTRO -->
     <section>
-      <div class="eyebrow">Mira dentro</div>
+      <div class="eyebrow" data-i18n="eyebrow_gal">Mira dentro</div>
       <div class="gallery">
         <div class="pg">
           <img src="p_llave.jpg" alt="La Llave — El alfabeto Pigpen" loading="lazy">
-          <div class="cap">&laquo;La Llave&raquo;<br>El alfabeto que abre el c&oacute;digo.</div>
+          <div class="cap" data-i18n="cap1">&laquo;La Llave&raquo;<br>El alfabeto que abre el c&oacute;digo.</div>
         </div>
         <div class="pg">
           <img src="p_xvi.jpg" alt="Enseñanza XVI cifrada" loading="lazy">
-          <div class="cap">Una de las 33<br>&iquest;Te atreves a descifrarla?</div>
+          <div class="cap" data-i18n="cap2">Una de las 33<br>&iquest;Te atreves a descifrarla?</div>
         </div>
         <div class="pg">
           <img src="p_xxxiii.jpg" alt="Enseñanza XXXIII cifrada" loading="lazy">
-          <div class="cap">XXXIII &mdash; La &uacute;ltima.<br>La que cierra el c&oacute;digo.</div>
+          <div class="cap" data-i18n="cap3">XXXIII &mdash; La &uacute;ltima.<br>La que cierra el c&oacute;digo.</div>
         </div>
       </div>
-      <p class="hint">La Llave est&aacute; dentro del libro. &Uacute;sala.</p>
+      <p class="hint" data-i18n="hint">La Llave est&aacute; dentro del libro. &Uacute;sala.</p>
     </section>
 
     <section>
       <div class="challenge">
-        <h3>&iquest;Puedes leerlo?</h3>
-        <p>La portada misma esconde un mensaje cifrado. Si miras con atenci&oacute;n, hay una frase esperando ser descubierta.</p>
-        <p class="big">El que descifra, recuerda para siempre.<br>El que solo lee, olvida.</p>
+        <h3 data-i18n="ch_h3">&iquest;Puedes leerlo?</h3>
+        <p data-i18n="ch_p">La portada misma esconde un mensaje cifrado. Si miras con atenci&oacute;n, hay una frase esperando ser descubierta.</p>
+        <p class="big" data-i18n="ch_big">El que descifra, recuerda para siempre.<br>El que solo lee, olvida.</p>
       </div>
     </section>
 
     <section>
       <div class="buybox">
-        <div class="eyebrow" style="margin-bottom:18px">Cons&iacute;guelo</div>
+        <div class="eyebrow" style="margin-bottom:18px" data-i18n="eyebrow_buy">Cons&iacute;guelo</div>
         <div class="price">$19.99 USD</div>
-        <div class="fmt">Tapa blanda &middot; 6&Prime;&times;9&Prime; &middot; Espa&ntilde;ol &middot; Amazon</div>
-        <a class="btn" href="#" id="buyMain">Conseguir mi copia</a>
-        <span class="soon">&#9670; Disponible muy pronto en Amazon &#9670;</span>
+        <div class="fmt" data-i18n="buy_fmt">Tapa blanda &middot; 6&Prime;&times;9&Prime; &middot; Espa&ntilde;ol &middot; Amazon</div>
+        <a class="btn" href="#" id="buyMain" data-i18n="buyMain">Conseguir mi copia</a>
+        <span class="soon" data-i18n="soon_main">&#9670; Disponible muy pronto en Amazon &#9670;</span>
       </div>
     </section>
 
     <section>
-      <div class="eyebrow">Qui&eacute;n est&aacute; detr&aacute;s</div>
+      <div class="eyebrow" data-i18n="eyebrow_bio">Qui&eacute;n est&aacute; detr&aacute;s</div>
       <div class="bio">
         <span class="name">Leo R.C. &#8756;</span>
-        <p>Maestro Mas&oacute;n e iniciado de la Orden Rosacruz. Creador de S&iacute;mbolos 360. Antes de los libros ya regalaba pasteles de aniversario a logias enteras y apoyaba a ni&ntilde;os sin amparo; hoy convierte cada obra en una forma de seguir dando.</p>
+        <p data-i18n="bio_p">Maestro Mas&oacute;n e iniciado de la Orden Rosacruz. Creador de S&iacute;mbolos 360. Antes de los libros ya regalaba pasteles de aniversario a logias enteras y apoyaba a ni&ntilde;os sin amparo; hoy convierte cada obra en una forma de seguir dando.</p>
       </div>
     </section>
 
     <section class="center">
-      <div class="eyebrow">El Canal</div>
-      <p class="lead" style="margin-bottom:24px;font-size:1.08rem">S&iacute;mbolos, historia oculta y misterios ancestrales, cada semana.</p>
-      <a class="btn ghost" href="https://www.youtube.com/@Simbolos360" target="_blank" rel="noopener">&#9654; Ver en YouTube</a>
+      <div class="eyebrow" data-i18n="eyebrow_canal">El Canal</div>
+      <p class="lead" style="margin-bottom:24px;font-size:1.08rem" data-i18n="canal_lead">S&iacute;mbolos, historia oculta y misterios ancestrales, cada semana.</p>
+      <a class="btn ghost" href="https://www.youtube.com/@Simbolos360" target="_blank" rel="noopener" data-i18n="yt_btn">&#9654; Ver en YouTube</a>
     </section>
 
     <section class="center">
       <div class="div"><span>&#9670;</span></div>
-      <p class="teaser">Esto es solo la primera pieza.<br>La colecci&oacute;n apenas comienza.</p>
+      <p class="teaser" data-i18n="teaser">Esto es solo la primera pieza.<br>La colecci&oacute;n apenas comienza.</p>
     </section>
 
   </div>
 
   <footer>
     S&Iacute;MBOLOS 360 &middot; 2026 &middot; &#8756;
-    <span class="ind">Obra independiente. No afiliada ni respaldada por ninguna Gran Logia ni cuerpo mas&oacute;nico.</span>
+    <span class="ind" data-i18n="footer_ind">Obra independiente. No afiliada ni respaldada por ninguna Gran Logia ni cuerpo mas&oacute;nico.</span>
   </footer>
+
+<script>
+(function(){
+  var EN = {
+    eyebrow_hero:"Collector's Edition &middot; Amazon",
+    h1:"THE BUILDERS'<br>CODE",
+    sub:"Masonic wisdom in code;<br>decipher it with your own hands.",
+    hook:"A book you don't read.<br>You decipher it.",
+    buyTop:"Get it on Amazon",
+    soon_top:"&#9670; Coming very soon &#9670;",
+    eyebrow_obra:"The Work",
+    lead_obra:"For centuries, the old builders kept their wisdom in a cipher that time almost erased. <em>This book brings it back.</em> Thirty-three teachings on character, brotherhood, the craft, time, and legacy &mdash; written entirely in code. Here you will not read: you will decipher, symbol by symbol, with your own hands.",
+    eyebrow_pillars:"33 Teachings &middot; 5 Pillars",
+    pn_char:"Character", pt_char:"Forge the inner stone, blow by blow.",
+    pn_herm:"Brotherhood", pt_herm:"The level before which all are equal.",
+    pn_ofi:"Craft", pt_ofi:"Honest work as a form of prayer.",
+    pn_tiem:"Time", pt_tiem:"The stone that is carved only once.",
+    pn_leg:"Legacy", pt_leg:"What you leave carved within, that burns beyond you.",
+    eyebrow_feat:"What you'll find inside",
+    feat1:"<strong>33 teachings in code.</strong> Written entirely in the cipher of the old stonemasons &mdash; the same one that kept secrets on gravestones and records for centuries.",
+    feat2:"<strong>The Key.</strong> A primer that teaches you to decipher step by step. You need to know nothing beforehand.",
+    feat3:"<strong>The Veil.</strong> A final guardian and the solutions, for the one who dares to cross the threshold.",
+    feat4:"<strong>For the curious, the seekers and the brothers.</strong> You don't need to be a Mason. You only need to want to decipher it.",
+    eyebrow_gal:"Look inside",
+    cap1:"&ldquo;The Key&rdquo;<br>The alphabet that opens the code.",
+    cap2:"One of the 33<br>Dare to decipher it?",
+    cap3:"XXXIII &mdash; The last.<br>The one that closes the code.",
+    hint:"The Key is inside the book. Use it.",
+    ch_h3:"Can you read it?",
+    ch_p:"The cover itself hides a coded message. Look closely, and a phrase is waiting to be uncovered.",
+    ch_big:"He who deciphers remembers forever.<br>He who only reads forgets.",
+    eyebrow_buy:"Get it",
+    buy_fmt:"Paperback &middot; 6&Prime;&times;9&Prime; &middot; English &middot; Amazon",
+    buyMain:"Get my copy",
+    soon_main:"&#9670; Coming soon on Amazon &#9670;",
+    eyebrow_bio:"Who's behind it",
+    bio_p:"Master Mason and initiate of the Rosicrucian Order. Creator of S&iacute;mbolos 360. Before the books, he already gave anniversary cakes to entire lodges and supported children in need; today he turns every work into a way to keep giving.",
+    eyebrow_canal:"The Channel",
+    canal_lead:"Symbols, hidden history and ancient mysteries, every week.",
+    yt_btn:"&#9654; Watch on YouTube",
+    teaser:"This is only the first piece.<br>The collection is just beginning.",
+    footer_ind:"Independent work. Not affiliated with or endorsed by any Grand Lodge or Masonic body."
+  };
+  var TITLES={es:"El C\u00f3digo de los Constructores \u2014 S\u00edmbolos 360", en:"The Builders' Code \u2014 S\u00edmbolos 360"};
+  var ALT={es:"El C\u00f3digo de los Constructores", en:"The Builders' Code"};
+  var IMG={es:"portada.jpg", en:"portada.jpg"};
+  var AMAZON={es:"#", en:"#"};
+  var els=document.querySelectorAll('[data-i18n]');
+  var ES={};
+  els.forEach(function(el){ ES[el.getAttribute('data-i18n')]=el.innerHTML; });
+  var DICT={es:ES, en:EN};
+  var heroImg=document.getElementById('heroImg');
+  function setLang(lang, save){
+    if(lang!=='en') lang='es';
+    document.documentElement.lang=lang;
+    document.title=TITLES[lang];
+    var d=DICT[lang];
+    els.forEach(function(el){ var k=el.getAttribute('data-i18n'); if(d[k]!=null) el.innerHTML=d[k]; });
+    if(heroImg){ heroImg.alt=ALT[lang]; heroImg.src=IMG[lang]; }
+    var bt=document.getElementById('buyTop'); if(bt) bt.href=AMAZON[lang];
+    var bm=document.getElementById('buyMain'); if(bm) bm.href=AMAZON[lang];
+    document.querySelectorAll('.langtog button').forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-lang')===lang); });
+    if(save){ try{localStorage.setItem('s360lang',lang);}catch(e){} }
+  }
+  function detect(){
+    try{
+      var p=new URLSearchParams(location.search).get('lang');
+      if(p==='en'||p==='es') return p;
+      var s=localStorage.getItem('s360lang');
+      if(s==='en'||s==='es') return s;
+    }catch(e){}
+    var n=(navigator.language||'es').toLowerCase();
+    return n.indexOf('en')===0 ? 'en':'es';
+  }
+  document.querySelectorAll('.langtog button').forEach(function(b){
+    b.addEventListener('click', function(){ setLang(b.getAttribute('data-lang'), true); });
+  });
+  setLang(detect(), false);
+})();
+</script>
 
 </body>
 </html>
