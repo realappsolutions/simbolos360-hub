@@ -128,6 +128,10 @@
   .div::before,.div::after{content:"";height:1px;width:54px;background:var(--line)}
   .teaser{text-align:center;color:var(--gold-soft);font-style:italic;font-size:1.12rem;opacity:.85}
   .center{text-align:center}
+  .cipher-note{max-width:520px;margin:0 auto;padding:24px 26px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg,var(--bg2),var(--bg3));box-shadow:0 14px 40px rgba(0,0,0,.35);text-align:left}
+  .cipher-note .ttl{display:block;font-family:'Cinzel',serif;color:var(--gold);font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;margin-bottom:14px;opacity:.9;text-align:center}
+  .cipher-note p{font-style:italic;font-size:1rem;line-height:1.65;color:var(--gold-soft);opacity:.94;margin:0}
+  .cipher-note strong{color:var(--gold-bright);font-weight:600;font-style:normal}
   footer{
     text-align:center;padding:42px 22px 50px;border-top:1px solid var(--line);
     color:var(--gold-soft);font-family:'Cinzel',serif;font-size:.72rem;
@@ -242,6 +246,13 @@
     </section>
 
     <section class="center">
+      <div class="cipher-note">
+        <span class="ttl" data-i18n="cn_ttl">Sobre el cifrado</span>
+        <p data-i18n="cipher_note">El pigpen &mdash;el cifrado mas&oacute;nico&mdash; no tiene una sola forma: existen varias disposiciones hist&oacute;ricas documentadas. Esta obra emplea, de manera deliberada, la variante de las cruces en <strong>orden horario</strong>. Su clave completa vive <strong>dentro del libro</strong>: es la &uacute;nica que necesitas para descifrarlo. Quien lo busca en internet no lo abre; quien estudia <strong>La Llave</strong>, s&iacute;.</p>
+      </div>
+    </section>
+
+    <section class="center">
       <div class="div"><span>&#9670;</span></div>
       <p class="teaser" data-i18n="teaser">Esto es solo la primera pieza.<br>La colecci&oacute;n apenas comienza.</p>
     </section>
@@ -292,6 +303,8 @@
     eyebrow_canal:"The Channel",
     canal_lead:"Symbols, hidden history and ancient mysteries, every week.",
     yt_btn:"&#9654; Watch on YouTube",
+    cn_ttl:"On the cipher",
+    cipher_note:"The pigpen &mdash;the Masonic cipher&mdash; has no single form: several historical arrangements are documented. This work deliberately uses the <strong>clockwise-cross variant</strong>. Its complete key lives <strong>inside the book</strong> &mdash; the only one you need to decipher it. Those who look it up online won't open it; those who study <strong>The Key</strong> will.",
     teaser:"This is only the first piece.<br>The collection is just beginning.",
     footer_ind:"Independent work. Not affiliated with or endorsed by any Grand Lodge or Masonic body."
   };
