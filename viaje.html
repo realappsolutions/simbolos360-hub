@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Viaje del Constructor — Símbolos 360</title>
+<meta name="description" content="El Viaje del Constructor: una fábula iniciática ilustrada sobre construirse a uno mismo, de la piedra bruta a la obra maestra. Por Leo R.C. — Símbolos 360.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Símbolos 360">
+<meta property="og:title" content="El Viaje del Constructor">
+<meta property="og:description" content="Una fábula iniciática ilustrada sobre construirse a uno mismo. De la piedra bruta a la obra maestra. Por Leo R.C.">
+<meta property="og:image" content="https://www.simbolos360.com/viaje.jpg">
+<meta property="og:url" content="https://www.simbolos360.com/viaje.html">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="El Viaje del Constructor">
+<meta name="twitter:description" content="Una fábula iniciática ilustrada sobre construirse a uno mismo.">
+<meta name="twitter:image" content="https://www.simbolos360.com/viaje.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c1016; --bg2:#141b24; --bg3:#10161e;
+    --gold:#c2a06a; --gold-soft:#d8bd8c; --gold-bright:#e6cf9a;
+    --cream:#e7d9b8; --ink:#1a1206; --line:rgba(194,160,106,.30);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--cream);font-family:'EB Garamond',serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:700px;margin:0 auto;padding:0 22px}
+  h1,h2,h3,.cinzel{font-family:'Cinzel',serif;letter-spacing:.05em}
+  .brand{display:flex;align-items:center;justify-content:center;gap:10px;padding:18px 22px;border-bottom:1px solid var(--line);background:rgba(10,14,20,.6);position:sticky;top:0;z-index:10;backdrop-filter:blur(8px)}
+  .brand svg{width:26px;height:26px}
+  .brand span{font-family:'Cinzel',serif;color:var(--gold);font-size:.8rem;letter-spacing:.28em;text-transform:uppercase}
+  .langtog{position:absolute;right:16px;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:5px}
+  .langtog button{background:none;border:none;color:var(--gold-soft);opacity:.45;cursor:pointer;font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.12em;padding:3px 2px;text-transform:uppercase}
+  .langtog button.active{color:var(--gold-bright);opacity:1;font-weight:700}
+  .langtog .sep{color:var(--line);font-size:.7rem}
+  .hero{text-align:center;padding:46px 22px 40px;background:radial-gradient(130% 90% at 50% 0%, #1a232f 0%, var(--bg) 65%);border-bottom:1px solid var(--line)}
+  .hero .eyebrow{color:var(--gold-soft);font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;margin-bottom:26px;opacity:.85}
+  .hero img{width:248px;max-width:70%;border-radius:7px;box-shadow:0 22px 60px rgba(0,0,0,.7),0 0 0 1px rgba(194,160,106,.25);margin-bottom:28px}
+  .hero h1{font-size:1.85rem;color:var(--gold);font-weight:700;letter-spacing:.08em;line-height:1.18;margin-bottom:14px}
+  .hero .sub{font-style:italic;color:var(--cream);opacity:.85;font-size:1.08rem;max-width:440px;margin:0 auto 26px}
+  .hook{font-family:'Cinzel',serif;color:var(--gold-bright);font-size:1.05rem;letter-spacing:.04em;margin:0 auto 30px;line-height:1.5}
+  .btn{display:inline-block;background:linear-gradient(180deg,#e3c98e,#bd9a5c);color:var(--ink);font-family:'Cinzel',serif;font-weight:700;letter-spacing:.07em;text-transform:uppercase;font-size:.85rem;padding:16px 36px;border-radius:9px;text-decoration:none;box-shadow:0 10px 28px rgba(194,160,106,.35);transition:transform .15s}
+  .btn:active{transform:scale(.97)}
+  .btn.ghost{background:transparent;color:var(--gold);border:1px solid var(--gold);box-shadow:none}
+  .soon{display:block;margin-top:14px;font-size:.8rem;color:var(--gold-soft);opacity:.7;font-style:italic;letter-spacing:.04em}
+  section{padding:46px 0}
+  .eyebrow{text-align:center;color:var(--gold);font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;margin-bottom:22px}
+  .lead{font-size:1.18rem;text-align:center;color:var(--cream);opacity:.95;max-width:560px;margin:0 auto;line-height:1.7}
+  .lead em{color:var(--gold-soft);font-style:italic}
+  .feat{max-width:560px;margin:0 auto}
+  .feat .row{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid rgba(194,160,106,.14)}
+  .feat .row:last-child{border-bottom:none}
+  .feat .mk{color:var(--gold);font-size:1.2rem;flex-shrink:0;line-height:1.4}
+  .feat .row p{font-size:1.05rem;opacity:.92}
+  .feat .row strong{color:var(--gold-soft);font-weight:400;font-family:'Cinzel',serif;font-size:.95rem;letter-spacing:.03em}
+  .gallery{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:4px}
+  @media(max-width:540px){.gallery{grid-template-columns:1fr}}
+  .pg{background:#f4f1ea;border-radius:8px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.55);border:1px solid var(--line)}
+  .pg img{width:100%;display:block}
+  .pg .cap{text-align:center;font-size:.78rem;color:#3a2c1a;padding:8px 10px 10px;font-style:italic;line-height:1.4;background:#f4f1ea}
+  .hint{text-align:center;font-size:.78rem;color:var(--gold-soft);opacity:.6;margin-top:10px;letter-spacing:.04em}
+  .buybox{background:linear-gradient(180deg,var(--bg2),var(--bg3));border:1px solid var(--line);border-radius:16px;padding:36px 26px;text-align:center;box-shadow:0 18px 50px rgba(0,0,0,.45)}
+  .buybox .price{font-family:'Cinzel',serif;color:var(--gold);font-size:1.4rem;letter-spacing:.06em;margin-bottom:6px}
+  .buybox .fmt{font-size:.92rem;opacity:.7;margin-bottom:24px;letter-spacing:.03em}
+  .bio{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:32px 26px;text-align:center}
+  .bio .name{color:var(--gold);font-family:'Cinzel',serif;font-size:1.05rem;letter-spacing:.1em;display:block;margin-bottom:16px}
+  .bio p{font-size:1.08rem;opacity:.92;max-width:520px;margin:0 auto}
+  .div{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:18px;color:var(--gold)}
+  .div::before,.div::after{content:"";height:1px;width:54px;background:var(--line)}
+  .teaser{text-align:center;color:var(--gold-soft);font-style:italic;font-size:1.12rem;opacity:.85}
+  .center{text-align:center}
+  .backlink{display:block;text-align:center;margin:30px auto 0;color:var(--gold-soft);font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;opacity:.75}
+  footer{text-align:center;padding:42px 22px 50px;border-top:1px solid var(--line);color:var(--gold-soft);font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.16em;margin-top:30px;opacity:.75;line-height:2}
+  footer .ind{display:block;font-size:.66rem;opacity:.7;letter-spacing:.08em;margin-top:8px;text-transform:none;font-family:'EB Garamond',serif;font-style:italic}
+</style>
+</head>
+<body>
+
+  <div class="brand">
+    <svg viewBox="0 0 100 100" fill="none" stroke="#c2a06a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M50 16 L30 78 M50 16 L70 78"/>
+      <circle cx="50" cy="16" r="3.4" fill="#c2a06a"/>
+      <path d="M26 60 L50 84 L74 60"/>
+      <text x="50" y="62" font-family="Cinzel, serif" font-size="20" fill="#c2a06a" stroke="none" text-anchor="middle">G</text>
+    </svg>
+    <span>S&Iacute;MBOLOS 360</span>
+    <div class="langtog">
+      <button type="button" data-lang="es">ES</button><span class="sep">|</span><button type="button" data-lang="en">EN</button>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="eyebrow" data-i18n="eyebrow_hero">F&aacute;bula inici&aacute;tica &middot; Amazon</div>
+    <img id="heroImg" src="viaje.jpg" alt="El Viaje del Constructor">
+    <h1 data-i18n="h1">EL VIAJE<br>DEL CONSTRUCTOR</h1>
+    <div class="sub" data-i18n="sub">De la piedra bruta a la obra maestra.</div>
+    <div class="hook" data-i18n="hook">Una f&aacute;bula para quien<br>se construye a s&iacute; mismo.</div>
+    <a class="btn" href="https://a.co/d/0dkougWk" id="buyTop" target="_blank" rel="noopener" data-i18n="buyTop">Conseguir el eBook</a>
+    <span class="soon" data-i18n="soon_top">&#9670; Tapa blanda muy pronto &#9670;</span>
+  </header>
+
+  <div class="wrap">
+
+    <section>
+      <div class="eyebrow" data-i18n="eyebrow_obra">La Obra</div>
+      <p class="lead" data-i18n="lead_obra">Tom&aacute;s llega a una catedral que nunca termina de alzarse. All&iacute;, herramienta tras herramienta, descubre que la obra m&aacute;s dif&iacute;cil no es la de piedra: <em>es la de uno mismo.</em> Una f&aacute;bula luminosa, en la senda de El Principito y El Alquimista, sobre el oficio, la paciencia y la transformaci&oacute;n interior.</p>
+    </section>
+
+    <section>
+      <div class="eyebrow" data-i18n="eyebrow_feat">Qu&eacute; encontrar&aacute;s dentro</div>
+      <div class="feat">
+        <div class="row"><span class="mk">&#9670;</span><p data-i18n="feat1"><strong>Una historia, no un tratado.</strong> Se lee de un tir&oacute;n &mdash; pero se queda contigo mucho despu&eacute;s de la &uacute;ltima p&aacute;gina.</p></div>
+        <div class="row"><span class="mk">&#9670;</span><p data-i18n="feat2"><strong>Ilustrada a mano.</strong> Cada estaci&oacute;n del viaje acompa&ntilde;ada de una l&aacute;mina en grafito sobre papel marfil.</p></div>
+        <div class="row"><span class="mk">&#9670;</span><p data-i18n="feat3"><strong>Un cuento con capas.</strong> El ni&ntilde;o ve la aventura; el adulto, el espejo. Cada quien encuentra lo que vino a buscar.</p></div>
+        <div class="row"><span class="mk">&#9670;</span><p data-i18n="feat4"><strong>No hace falta ser mas&oacute;n.</strong> Las herramientas del constructor hablan un lenguaje universal: el de quien quiere ser mejor.</p></div>
+      </div>
+    </section>
+
+    <section id="miradentro">
+      <div class="eyebrow" data-i18n="eyebrow_gal">Mira dentro</div>
+      <div class="gallery">
+        <div class="pg"><img src="viaje_p1.jpg" alt="L&aacute;mina interior: el mazo" loading="lazy" onerror="this.closest('.pg').style.display='none'"><div class="cap" data-i18n="cap1">El primer golpe<br>sobre la piedra bruta.</div></div>
+        <div class="pg"><img src="viaje_p2.jpg" alt="L&aacute;mina interior: la escuadra" loading="lazy" onerror="this.closest('.pg').style.display='none'"><div class="cap" data-i18n="cap2">La escuadra: medir lo recto,<br>por dentro y por fuera.</div></div>
+        <div class="pg"><img src="viaje_p3.jpg" alt="L&aacute;mina interior: la clave del arco" loading="lazy" onerror="this.closest('.pg').style.display='none'"><div class="cap" data-i18n="cap3">La clave del arco:<br>la piedra que sostiene a todas.</div></div>
+      </div>
+      <p class="hint" data-i18n="hint">Quince estaciones. Un solo viaje.</p>
+    </section>
+
+    <section>
+      <div class="buybox">
+        <div class="eyebrow" style="margin-bottom:18px" data-i18n="eyebrow_buy">Cons&iacute;guelo</div>
+        <div class="price">$6.99 USD</div>
+        <div class="fmt" data-i18n="buy_fmt">eBook Kindle &middot; Espa&ntilde;ol &middot; ilustrado</div>
+        <a class="btn" href="https://a.co/d/0dkougWk" id="buyMain" target="_blank" rel="noopener" data-i18n="buyMain">Conseguir el eBook</a>
+        <span class="soon" data-i18n="soon_main">&#9670; Tapa blanda ($19.99) muy pronto &#9670;</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="eyebrow" data-i18n="eyebrow_bio">Qui&eacute;n est&aacute; detr&aacute;s</div>
+      <div class="bio">
+        <span class="name">Leo R.C. &#8756;</span>
+        <p data-i18n="bio_p">Maestro Mas&oacute;n e iniciado de la Orden Rosacruz. Creador de S&iacute;mbolos 360. Antes de los libros ya regalaba pasteles de aniversario a logias enteras y apoyaba a ni&ntilde;os sin amparo; hoy convierte cada obra en una forma de seguir dando.</p>
+      </div>
+    </section>
+
+    <section class="center">
+      <div class="eyebrow" data-i18n="eyebrow_canal">El Canal</div>
+      <p class="lead" style="margin-bottom:24px;font-size:1.08rem" data-i18n="canal_lead">S&iacute;mbolos, historia oculta y misterios ancestrales, cada semana.</p>
+      <a class="btn ghost" href="https://www.youtube.com/@Simbolos360" target="_blank" rel="noopener" data-i18n="yt_btn">&#9654; Ver en YouTube</a>
+    </section>
+
+    <section class="center">
+      <div class="div"><span>&#9670;</span></div>
+      <p class="teaser" data-i18n="teaser">Cada libro es una llave.<br>Esta abre el camino hacia dentro.</p>
+      <a class="backlink" href="index.html" data-i18n="backlink">&#8592; Ver toda la biblioteca</a>
+    </section>
+
+  </div>
+
+  <footer>
+    S&Iacute;MBOLOS 360 &middot; 2026 &middot; &#8756;
+    <span class="ind" data-i18n="footer_ind">Obra independiente. No afiliada ni respaldada por ninguna Gran Logia ni cuerpo mas&oacute;nico.</span>
+  </footer>
+
+<script>
+(function(){
+  var EN={
+    eyebrow_hero:"Initiatic fable &middot; Amazon",
+    h1:"THE BUILDER'S<br>JOURNEY",
+    sub:"From the rough stone to the masterwork.",
+    hook:"A fable for those who<br>build themselves.",
+    eyebrow_obra:"The Work",
+    lead_obra:"Tom&aacute;s arrives at a cathedral that never finishes rising. There, tool after tool, he discovers that the hardest work is not the one made of stone: <em>it is the work on oneself.</em> A luminous fable, in the path of The Little Prince and The Alchemist, about craft, patience and inner transformation.",
+    eyebrow_feat:"What you'll find inside",
+    feat1:"<strong>A story, not a treatise.</strong> Read in one sitting &mdash; but it stays with you long after the last page.",
+    feat2:"<strong>Hand-illustrated.</strong> Each station of the journey paired with a graphite plate on ivory paper.",
+    feat3:"<strong>A tale with layers.</strong> The child sees the adventure; the adult, the mirror. Each finds what they came for.",
+    feat4:"<strong>You don't need to be a Mason.</strong> The builder's tools speak a universal language: that of anyone who wants to be better.",
+    eyebrow_gal:"Look inside",
+    cap1:"The first strike<br>upon the rough stone.",
+    cap2:"The square: to measure what is right,<br>within and without.",
+    cap3:"The keystone:<br>the stone that holds all others.",
+    hint:"Fifteen stations. A single journey.",
+    eyebrow_buy:"Get it",
+    buy_fmt:"Kindle eBook &middot; Spanish &middot; illustrated",
+    buyMain:"Get the eBook",
+    soon_main:"&#9670; Paperback ($19.99) coming very soon &#9670;",
+    buyTop:"Get the eBook",
+    soon_top:"&#9670; Paperback coming very soon &#9670;",
+    eyebrow_bio:"Who's behind it",
+    bio_p:"Master Mason and initiate of the Rosicrucian Order. Creator of S&iacute;mbolos 360. Before the books, he already gave anniversary cakes to entire lodges and supported children in need; today he turns every work into a way to keep giving.",
+    eyebrow_canal:"The Channel",
+    canal_lead:"Symbols, hidden history and ancient mysteries, every week.",
+    yt_btn:"&#9654; Watch on YouTube",
+    teaser:"Every book is a key.<br>This one opens the road within.",
+    backlink:"&#8592; See the whole library",
+    footer_ind:"Independent work. Not affiliated with or endorsed by any Grand Lodge or Masonic body."
+  };
+  var TITLES={es:"El Viaje del Constructor \u2014 S\u00edmbolos 360", en:"The Builder's Journey \u2014 S\u00edmbolos 360"};
+  var els=document.querySelectorAll('[data-i18n]');
+  var ES={};
+  els.forEach(function(el){ ES[el.getAttribute('data-i18n')]=el.innerHTML; });
+  var DICT={es:ES,en:EN};
+  function setLang(lang,save){
+    if(lang!=='en') lang='es';
+    document.documentElement.lang=lang;
+    document.title=TITLES[lang];
+    var d=DICT[lang];
+    els.forEach(function(el){ var k=el.getAttribute('data-i18n'); if(d[k]!=null) el.innerHTML=d[k]; });
+    document.querySelectorAll('.langtog button').forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-lang')===lang); });
+    if(save){ try{localStorage.setItem('s360lang',lang);}catch(e){} }
+  }
+  function detect(){
+    try{
+      var p=new URLSearchParams(location.search).get('lang');
+      if(p==='en'||p==='es') return p;
+      var s=localStorage.getItem('s360lang');
+      if(s==='en'||s==='es') return s;
+    }catch(e){}
+    var n=(navigator.language||'es').toLowerCase();
+    return n.indexOf('en')===0?'en':'es';
+  }
+  document.querySelectorAll('.langtog button').forEach(function(b){
+    b.addEventListener('click',function(){ setLang(b.getAttribute('data-lang'),true); });
+  });
+  setLang(detect(),false);
+  // Auto-ocultar "Mira dentro" si ninguna lámina llega a cargar
+  window.addEventListener('load',function(){
+    var sec=document.getElementById('miradentro');
+    if(sec && sec.querySelectorAll('.pg').length>0){
+      var visibles=Array.prototype.filter.call(sec.querySelectorAll('.pg'),function(p){return p.style.display!=='none';});
+      if(visibles.length===0) sec.style.display='none';
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
