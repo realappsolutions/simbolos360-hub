@@ -52,27 +52,34 @@
   /* INSIGNIA */
   .feature{background:linear-gradient(180deg,var(--bg2),var(--bg3));border:1px solid var(--line);border-radius:18px;padding:30px 26px 34px;text-align:center;box-shadow:0 22px 60px rgba(0,0,0,.5);position:relative;overflow:hidden}
   .feature::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 50% at 50% 0%,rgba(194,160,106,.10),transparent 70%);pointer-events:none}
-  .badge{display:inline-block;font-family:'Cinzel',serif;color:var(--gold-bright);font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;border:1px solid var(--line);border-radius:30px;padding:6px 16px;margin-bottom:22px}
-  .feature img{width:210px;max-width:62%;border-radius:8px;box-shadow:0 20px 50px rgba(0,0,0,.65),0 0 0 1px rgba(194,160,106,.25);margin-bottom:22px}
-  .feature h2{font-size:1.45rem;color:var(--gold);font-weight:700;letter-spacing:.06em;line-height:1.2;margin-bottom:10px}
-  .feature .fsub{font-style:italic;opacity:.85;font-size:1.04rem;max-width:420px;margin:0 auto 16px}
-  .feature .price{font-family:'Cinzel',serif;color:var(--gold);font-size:1.15rem;letter-spacing:.05em;margin-bottom:20px}
-  .feature .explore{display:block;margin-top:16px;color:var(--gold-soft);font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;opacity:.85}
-  /* COLECCIÓN */
-  .shelf{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:4px}
-  @media(max-width:560px){.shelf{grid-template-columns:1fr}}
-  .bookcard{background:linear-gradient(180deg,var(--bg2),var(--bg3));border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;align-items:center;text-align:center}
-  .coverwrap{position:relative;width:135px;aspect-ratio:2/3;border-radius:6px;overflow:hidden;margin-bottom:16px;background:linear-gradient(160deg,#1c2630,#0e141c);box-shadow:0 12px 30px rgba(0,0,0,.5);border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
+  .badge{display:inline-block;font-family:'Cinzel',serif;color:var(--gold-bright);font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;border:1px solid var(--line);border-radius:30px;padding:6px 16px;margin-bottom:22px;position:relative}
+  .feature img{width:210px;max-width:62%;border-radius:8px;box-shadow:0 20px 50px rgba(0,0,0,.65),0 0 0 1px rgba(194,160,106,.25);margin-bottom:22px;position:relative}
+  .feature h2{font-size:1.45rem;color:var(--gold);font-weight:700;letter-spacing:.06em;line-height:1.2;margin-bottom:10px;position:relative}
+  .feature .fsub{font-style:italic;opacity:.85;font-size:1.04rem;max-width:420px;margin:0 auto 16px;position:relative}
+  .feature .price{font-family:'Cinzel',serif;color:var(--gold);font-size:1.15rem;letter-spacing:.05em;margin-bottom:22px;position:relative}
+  .feature .acts{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;position:relative}
+  /* LISTA DE LIBROS */
+  .booklist{display:flex;flex-direction:column;gap:16px;margin-top:16px}
+  .bookrow{display:flex;gap:20px;align-items:center;background:linear-gradient(180deg,var(--bg2),var(--bg3));border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+  .coverwrap{position:relative;width:104px;flex-shrink:0;aspect-ratio:2/3;border-radius:6px;overflow:hidden;background:linear-gradient(160deg,#1c2630,#0e141c);box-shadow:0 12px 30px rgba(0,0,0,.5);border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
   .coverwrap img{position:relative;width:100%;height:100%;object-fit:cover;display:block}
   .coverwrap img.noimg{display:none}
-  .coverwrap .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--gold-soft);padding:10px}
-  .coverwrap .ph svg{width:30px;height:30px;opacity:.7}
-  .coverwrap .ph span{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;opacity:.7}
-  .bookcard .bt{font-family:'Cinzel',serif;color:var(--gold);font-size:.96rem;letter-spacing:.04em;line-height:1.3;margin-bottom:6px}
-  .bookcard .bf{font-size:.82rem;opacity:.7;margin-bottom:4px;line-height:1.4}
-  .bookcard .bp{font-family:'Cinzel',serif;color:var(--gold-soft);font-size:.82rem;letter-spacing:.04em;margin-bottom:16px}
-  .bookcard .acts{margin-top:auto;display:flex;flex-direction:column;gap:8px;width:100%}
-  .bookcard .acts a{width:100%}
+  .coverwrap .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--gold-soft);padding:8px}
+  .coverwrap .ph svg{width:26px;height:26px;opacity:.7}
+  .coverwrap .ph span{font-family:'Cinzel',serif;font-size:.54rem;letter-spacing:.14em;text-transform:uppercase;opacity:.7;text-align:center}
+  .bookrow .info{flex:1;min-width:0;text-align:left}
+  .bookrow .info .bt{font-family:'Cinzel',serif;color:var(--gold);font-size:1.06rem;letter-spacing:.04em;line-height:1.28;margin-bottom:6px}
+  .bookrow .info .bf{font-size:.84rem;opacity:.7;margin-bottom:4px;line-height:1.4}
+  .bookrow .info .bp{font-family:'Cinzel',serif;color:var(--gold-soft);font-size:.84rem;letter-spacing:.04em}
+  .bookrow .acts{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}
+  @media(max-width:520px){
+    .bookrow{flex-direction:column;text-align:center;padding:24px 18px}
+    .coverwrap{width:128px}
+    .bookrow .info{text-align:center}
+    .bookrow .acts{justify-content:center}
+    .feature .acts{flex-direction:column}
+    .feature .acts .btn{width:100%}
+  }
   .lead{font-size:1.12rem;text-align:center;color:var(--cream);opacity:.95;max-width:520px;margin:0 auto;line-height:1.7}
   .bio{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:30px 26px;text-align:center}
   .bio .name{color:var(--gold);font-family:'Cinzel',serif;font-size:1.05rem;letter-spacing:.1em;display:block;margin-bottom:16px}
@@ -112,56 +119,44 @@
 
   <div class="wrap">
 
-    <!-- INSIGNIA -->
+    <!-- LIBROS -->
     <section>
-      <div class="eyebrow" data-i18n="eyebrow_feat">La obra insignia</div>
+
+      <!-- Insignia: El Código -->
       <div class="feature">
         <span class="badge" data-i18n="badge">&#9670; Edici&oacute;n insignia &#9670;</span>
         <img id="featImg" src="portada.jpg" alt="El C&oacute;digo de los Constructores">
         <h2 data-i18n="feat_title">EL C&Oacute;DIGO DE LOS CONSTRUCTORES</h2>
         <div class="fsub" data-i18n="feat_sub">Sabidur&iacute;a mas&oacute;nica en clave. Un libro que no se lee: se descifra.</div>
         <div class="price">$19.99 USD</div>
-        <a class="btn" href="#" id="featBuy" data-i18n="feat_buy">Conseguirlo en Amazon</a>
-        <a class="explore" href="codigo.html" data-i18n="feat_explore">Explorar el reto del cifrado &#8594;</a>
-      </div>
-    </section>
-
-    <!-- COLECCIÓN -->
-    <section>
-      <div class="eyebrow" data-i18n="eyebrow_shelf">Toda la colecci&oacute;n</div>
-      <div class="shelf">
-
-        <!-- Código -->
-        <div class="bookcard">
-          <div class="coverwrap">
-            <div class="ph"><svg viewBox="0 0 100 100" fill="none" stroke="#c2a06a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M50 16 L30 78 M50 16 L70 78"/><path d="M26 60 L50 84 L74 60"/></svg><span data-i18n="ph">Portada pronto</span></div>
-            <img id="cov1" src="portada.jpg" alt="El C&oacute;digo de los Constructores" loading="lazy" onerror="this.classList.add('noimg')">
-          </div>
-          <div class="bt" data-i18n="b1_t">El C&oacute;digo de los Constructores</div>
-          <div class="bf" data-i18n="b1_f">Tapa blanda &middot; Espa&ntilde;ol</div>
-          <div class="bp">$19.99</div>
-          <div class="acts">
-            <a class="btn sm" href="#" id="b1buy" data-i18n="b1_buy">Comprar en Amazon</a>
-            <a class="btn sm ghost" href="codigo.html" data-i18n="b1_more">Ver libro</a>
-          </div>
+        <div class="acts">
+          <a class="btn" href="#" id="featBuy" data-i18n="feat_buy">Conseguirlo en Amazon</a>
+          <a class="btn ghost" href="codigo.html" data-i18n="feat_more">Ver libro</a>
         </div>
+      </div>
+
+      <!-- Resto de libros -->
+      <div class="booklist">
 
         <!-- El Viaje -->
-        <div class="bookcard">
+        <div class="bookrow">
           <div class="coverwrap">
             <div class="ph"><svg viewBox="0 0 100 100" fill="none" stroke="#c2a06a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M50 16 L30 78 M50 16 L70 78"/><path d="M26 60 L50 84 L74 60"/></svg><span data-i18n="ph">Portada pronto</span></div>
             <img id="cov2" src="viaje.jpg" alt="El Viaje del Constructor" loading="lazy" onerror="this.classList.add('noimg')">
           </div>
-          <div class="bt" data-i18n="b2_t">El Viaje del Constructor</div>
-          <div class="bf" data-i18n="b2_f">Tapa blanda &middot; eBook &middot; Espa&ntilde;ol</div>
-          <div class="bp">$19.99 &middot; $6.99</div>
-          <div class="acts">
-            <a class="btn sm" href="https://a.co/d/0dkougWk" target="_blank" rel="noopener" data-i18n="b2_ebook">eBook &middot; Amazon</a>
-            <span class="btn sm disabled" data-i18n="b2_soon">Tapa blanda pronto</span>
+          <div class="info">
+            <div class="bt" data-i18n="b2_t">El Viaje del Constructor</div>
+            <div class="bf" data-i18n="b2_f">eBook ilustrado &middot; Espa&ntilde;ol</div>
+            <div class="bp" data-i18n="b2_p">$6.99 &middot; tapa blanda pronto</div>
+            <div class="acts">
+              <a class="btn sm" href="https://a.co/d/0dkougWk" target="_blank" rel="noopener" data-i18n="b2_ebook">eBook &middot; Amazon</a>
+              <a class="btn sm ghost" href="viaje.html" data-i18n="b2_more">Ver libro</a>
+            </div>
           </div>
         </div>
 
       </div>
+
     </section>
 
     <!-- BIO -->
@@ -196,22 +191,17 @@
   var EN={
     h1:"THE LIBRARY",
     sub:"Masonic and esoteric wisdom.<br>Each book, a key.",
-    eyebrow_feat:"The flagship work",
     badge:"&#9670; Flagship edition &#9670;",
     feat_title:"THE BUILDERS' CODE",
     feat_sub:"Masonic wisdom in code. A book you don't read: you decipher it.",
     feat_buy:"Get it on Amazon",
-    feat_explore:"Explore the cipher challenge &#8594;",
-    eyebrow_shelf:"The whole collection",
+    feat_more:"View book",
     ph:"Cover soon",
-    b1_t:"The Builders' Code",
-    b1_f:"Paperback &middot; English",
-    b1_buy:"Buy on Amazon",
-    b1_more:"View book",
     b2_t:"The Builder's Journey",
-    b2_f:"Paperback &middot; eBook &middot; Spanish",
+    b2_f:"Illustrated eBook &middot; Spanish",
+    b2_p:"$6.99 &middot; paperback soon",
     b2_ebook:"eBook &middot; Amazon",
-    b2_soon:"Paperback soon",
+    b2_more:"View book",
     eyebrow_bio:"Who's behind it",
     bio_p:"Master Mason and initiate of the Rosicrucian Order. Creator of S&iacute;mbolos 360. Before the books, he already gave anniversary cakes to entire lodges and supported children in need; today he turns every work into a way to keep giving.",
     eyebrow_canal:"The Channel",
@@ -221,15 +211,13 @@
   };
   var TITLES={es:"S\u00edmbolos 360 \u2014 La Biblioteca", en:"S\u00edmbolos 360 \u2014 The Library"};
   var FEATIMG={es:"portada.jpg", en:"portada_en.jpg"};
-  var COV1={es:"portada.jpg", en:"portada_en.jpg"};
-  // Enlaces Amazon del Código (insignia + tarjeta). El Viaje aún sin enlace ("#").
+  // Enlace Amazon del Código (insignia) por idioma. El Viaje usa enlace fijo en el HTML.
   var AMZ_CODIGO={es:"https://www.amazon.com/dp/B0H64VY5PX", en:"https://a.co/d/05LHWelN"};
   var els=document.querySelectorAll('[data-i18n]');
   var ES={};
   els.forEach(function(el){ ES[el.getAttribute('data-i18n')]=el.innerHTML; });
   var DICT={es:ES,en:EN};
   var featImg=document.getElementById('featImg');
-  var cov1=document.getElementById('cov1');
   function setLang(lang,save){
     if(lang!=='en') lang='es';
     document.documentElement.lang=lang;
@@ -237,12 +225,9 @@
     var d=DICT[lang];
     els.forEach(function(el){ var k=el.getAttribute('data-i18n'); if(d[k]!=null) el.innerHTML=d[k]; });
     if(featImg){ featImg.src=FEATIMG[lang]; }
-    if(cov1){ cov1.classList.remove('noimg'); cov1.src=COV1[lang]; }
     var url=AMZ_CODIGO[lang];
-    ['featBuy','b1buy'].forEach(function(id){
-      var a=document.getElementById(id);
-      if(a){ a.href=url; a.target='_blank'; a.rel='noopener'; }
-    });
+    var fb=document.getElementById('featBuy');
+    if(fb){ fb.href=url; fb.target='_blank'; fb.rel='noopener'; }
     document.querySelectorAll('.langtog button').forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-lang')===lang); });
     if(save){ try{localStorage.setItem('s360lang',lang);}catch(e){} }
   }
