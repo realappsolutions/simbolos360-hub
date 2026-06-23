@@ -59,11 +59,10 @@
   .feat .row p{font-size:1.05rem;opacity:.92}
   .feat .row strong{color:var(--gold-soft);font-weight:400;font-family:'Cinzel',serif;font-size:.95rem;letter-spacing:.03em}
   .gallery{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:4px}
-  @media(max-width:540px){.gallery{grid-template-columns:1fr}}
+  @media(max-width:540px){.gallery{grid-template-columns:1fr;max-width:340px;margin-left:auto;margin-right:auto}}
   .pg{background:#f4f1ea;border-radius:8px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.55);border:1px solid var(--line)}
   .pg img{width:100%;display:block}
-  .pg .cap{text-align:center;font-size:.78rem;color:#3a2c1a;padding:8px 10px 10px;font-style:italic;line-height:1.4;background:#f4f1ea}
-  .hint{text-align:center;font-size:.78rem;color:var(--gold-soft);opacity:.6;margin-top:10px;letter-spacing:.04em}
+  .hint{text-align:center;font-size:.78rem;color:var(--gold-soft);opacity:.6;margin-top:14px;letter-spacing:.04em}
   .buybox{background:linear-gradient(180deg,var(--bg2),var(--bg3));border:1px solid var(--line);border-radius:16px;padding:36px 26px;text-align:center;box-shadow:0 18px 50px rgba(0,0,0,.45)}
   .buybox .price{font-family:'Cinzel',serif;color:var(--gold);font-size:1.4rem;letter-spacing:.06em;margin-bottom:6px}
   .buybox .fmt{font-size:.92rem;opacity:.7;margin-bottom:24px;letter-spacing:.03em}
@@ -124,9 +123,9 @@
     <section id="miradentro">
       <div class="eyebrow" data-i18n="eyebrow_gal">Mira dentro</div>
       <div class="gallery">
-        <div class="pg"><img src="viaje_p1.jpg" alt="L&aacute;mina interior: el mazo" loading="lazy" onerror="this.closest('.pg').style.display='none'"><div class="cap" data-i18n="cap1">El primer golpe<br>sobre la piedra bruta.</div></div>
-        <div class="pg"><img src="viaje_p2.jpg" alt="L&aacute;mina interior: la escuadra" loading="lazy" onerror="this.closest('.pg').style.display='none'"><div class="cap" data-i18n="cap2">La escuadra: medir lo recto,<br>por dentro y por fuera.</div></div>
-        <div class="pg"><img src="viaje_p3.jpg" alt="L&aacute;mina interior: la clave del arco" loading="lazy" onerror="this.closest('.pg').style.display='none'"><div class="cap" data-i18n="cap3">La clave del arco:<br>la piedra que sostiene a todas.</div></div>
+        <div class="pg"><img src="viaje_p1.jpg" alt="L&aacute;mina interior: el mazo" loading="lazy" onerror="this.closest('.pg').style.display='none'"></div>
+        <div class="pg"><img src="viaje_p2.jpg" alt="L&aacute;mina interior: la regla" loading="lazy" onerror="this.closest('.pg').style.display='none'"></div>
+        <div class="pg"><img src="viaje_p3.jpg" alt="L&aacute;mina interior: la clave del arco" loading="lazy" onerror="this.closest('.pg').style.display='none'"></div>
       </div>
       <p class="hint" data-i18n="hint">Quince estaciones. Un solo viaje.</p>
     </section>
@@ -183,9 +182,6 @@
     feat3:"<strong>A tale with layers.</strong> The child sees the adventure; the adult, the mirror. Each finds what they came for.",
     feat4:"<strong>You don't need to be a Mason.</strong> The builder's tools speak a universal language: that of anyone who wants to be better.",
     eyebrow_gal:"Look inside",
-    cap1:"The first strike<br>upon the rough stone.",
-    cap2:"The square: to measure what is right,<br>within and without.",
-    cap3:"The keystone:<br>the stone that holds all others.",
     hint:"Fifteen stations. A single journey.",
     eyebrow_buy:"Get it",
     buy_fmt:"Kindle eBook &middot; Spanish &middot; illustrated",
