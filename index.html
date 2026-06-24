@@ -47,36 +47,18 @@
   .btn{display:inline-block;background:linear-gradient(180deg,#e3c98e,#bd9a5c);color:var(--ink);font-family:'Cinzel',serif;font-weight:700;letter-spacing:.07em;text-transform:uppercase;font-size:.82rem;padding:15px 32px;border-radius:9px;text-decoration:none;box-shadow:0 10px 28px rgba(194,160,106,.35);transition:transform .15s}
   .btn:active{transform:scale(.97)}
   .btn.sm{padding:12px 22px;font-size:.74rem}
-  .btn.disabled{background:transparent;color:var(--gold-soft);border:1px solid var(--line);box-shadow:none;cursor:default;opacity:.7}
+  .btn.disabled{background:transparent;color:var(--gold-soft);border:1px solid var(--line);box-shadow:none;cursor:default;opacity:.6;pointer-events:none}
   .btn.ghost{background:transparent;color:var(--gold);border:1px solid var(--gold);box-shadow:none}
-  /* INSIGNIA */
-  .feature{background:linear-gradient(180deg,var(--bg2),var(--bg3));border:1px solid var(--line);border-radius:18px;padding:30px 26px 34px;text-align:center;box-shadow:0 22px 60px rgba(0,0,0,.5);position:relative;overflow:hidden}
+  /* TARJETAS DE LIBROS (iguales) */
+  .books{display:flex;flex-direction:column;gap:20px}
+  .feature{background:linear-gradient(180deg,var(--bg2),var(--bg3));border:1px solid var(--line);border-radius:18px;padding:34px 26px;text-align:center;box-shadow:0 22px 60px rgba(0,0,0,.5);position:relative;overflow:hidden}
   .feature::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 50% at 50% 0%,rgba(194,160,106,.10),transparent 70%);pointer-events:none}
-  .badge{display:inline-block;font-family:'Cinzel',serif;color:var(--gold-bright);font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;border:1px solid var(--line);border-radius:30px;padding:6px 16px;margin-bottom:22px;position:relative}
   .feature img{width:210px;max-width:62%;border-radius:8px;box-shadow:0 20px 50px rgba(0,0,0,.65),0 0 0 1px rgba(194,160,106,.25);margin-bottom:22px;position:relative}
   .feature h2{font-size:1.45rem;color:var(--gold);font-weight:700;letter-spacing:.06em;line-height:1.2;margin-bottom:10px;position:relative}
   .feature .fsub{font-style:italic;opacity:.85;font-size:1.04rem;max-width:420px;margin:0 auto 16px;position:relative}
   .feature .price{font-family:'Cinzel',serif;color:var(--gold);font-size:1.15rem;letter-spacing:.05em;margin-bottom:22px;position:relative}
   .feature .acts{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;position:relative}
-  /* LISTA DE LIBROS */
-  .booklist{display:flex;flex-direction:column;gap:16px;margin-top:16px}
-  .bookrow{display:flex;gap:20px;align-items:center;background:linear-gradient(180deg,var(--bg2),var(--bg3));border:1px solid var(--line);border-radius:14px;padding:20px 22px}
-  .coverwrap{position:relative;width:104px;flex-shrink:0;aspect-ratio:2/3;border-radius:6px;overflow:hidden;background:linear-gradient(160deg,#1c2630,#0e141c);box-shadow:0 12px 30px rgba(0,0,0,.5);border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
-  .coverwrap img{position:relative;width:100%;height:100%;object-fit:cover;display:block}
-  .coverwrap img.noimg{display:none}
-  .coverwrap .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--gold-soft);padding:8px}
-  .coverwrap .ph svg{width:26px;height:26px;opacity:.7}
-  .coverwrap .ph span{font-family:'Cinzel',serif;font-size:.54rem;letter-spacing:.14em;text-transform:uppercase;opacity:.7;text-align:center}
-  .bookrow .info{flex:1;min-width:0;text-align:left}
-  .bookrow .info .bt{font-family:'Cinzel',serif;color:var(--gold);font-size:1.06rem;letter-spacing:.04em;line-height:1.28;margin-bottom:6px}
-  .bookrow .info .bf{font-size:.84rem;opacity:.7;margin-bottom:4px;line-height:1.4}
-  .bookrow .info .bp{font-family:'Cinzel',serif;color:var(--gold-soft);font-size:.84rem;letter-spacing:.04em}
-  .bookrow .acts{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}
   @media(max-width:520px){
-    .bookrow{flex-direction:column;text-align:center;padding:24px 18px}
-    .coverwrap{width:128px}
-    .bookrow .info{text-align:center}
-    .bookrow .acts{justify-content:center}
     .feature .acts{flex-direction:column}
     .feature .acts .btn{width:100%}
   }
@@ -123,42 +105,34 @@
 
     <!-- LIBROS -->
     <section>
+      <div class="books">
 
-      <!-- Insignia: El Código -->
-      <div class="feature">
-        <span class="badge" data-i18n="badge">&#9670; Edici&oacute;n insignia &#9670;</span>
-        <img id="featImg" src="portada.jpg" alt="El C&oacute;digo de los Constructores">
-        <h2 data-i18n="feat_title">EL C&Oacute;DIGO DE LOS CONSTRUCTORES</h2>
-        <div class="fsub" data-i18n="feat_sub">Sabidur&iacute;a mas&oacute;nica en clave. Un libro que no se lee: se descifra.</div>
-        <div class="price">$19.99 USD</div>
-        <div class="acts">
-          <a class="btn" href="#" id="featBuy" data-i18n="feat_buy">Conseguirlo en Amazon</a>
-          <a class="btn ghost" href="codigo.html" data-i18n="feat_more">Ver libro</a>
-        </div>
-      </div>
-
-      <!-- Resto de libros -->
-      <div class="booklist">
-
-        <!-- El Viaje -->
-        <div class="bookrow">
-          <div class="coverwrap">
-            <div class="ph"><svg viewBox="0 0 100 100" fill="none" stroke="#c2a06a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="27" r="13"/><line x1="50" y1="40" x2="50" y2="85"/><line x1="50" y1="71" x2="63" y2="71"/><line x1="50" y1="80" x2="59" y2="80"/></svg><span data-i18n="ph">Portada pronto</span></div>
-            <img id="cov2" src="viaje.jpg" alt="El Viaje del Constructor" loading="lazy" onerror="this.classList.add('noimg')">
+        <!-- El Viaje (primero) -->
+        <div class="feature">
+          <img id="viajeImg" src="viaje.jpg" alt="El Viaje del Constructor">
+          <h2 data-i18n="v_title">EL VIAJE DEL CONSTRUCTOR</h2>
+          <div class="fsub" data-i18n="v_sub">Una f&aacute;bula para quien se construye a s&iacute; mismo.</div>
+          <div class="price" data-i18n="v_price">eBook $6.99 &middot; Tapa blanda $19.99</div>
+          <div class="acts">
+            <a class="btn vbuy" href="https://a.co/d/00bmLp1A" id="vEbook" target="_blank" rel="noopener" data-i18n="v_ebook">eBook &middot; Amazon</a>
+            <a class="btn vbuy" href="https://a.co/d/00bmLp1A" id="vPaper" target="_blank" rel="noopener" data-i18n="v_paper">Tapa blanda</a>
+            <a class="btn ghost" href="viaje.html" data-i18n="v_more">Ver libro</a>
           </div>
-          <div class="info">
-            <div class="bt" data-i18n="b2_t">El Viaje del Constructor</div>
-            <div class="bf" data-i18n="b2_f">eBook ilustrado &middot; Espa&ntilde;ol</div>
-            <div class="bp" data-i18n="b2_p">$6.99 &middot; tapa blanda pronto</div>
-            <div class="acts">
-              <a class="btn sm" href="https://a.co/d/00bmLp1A" target="_blank" rel="noopener" data-i18n="b2_ebook">eBook &middot; Amazon</a>
-              <a class="btn sm ghost" href="viaje.html" data-i18n="b2_more">Ver libro</a>
-            </div>
+        </div>
+
+        <!-- El Código (segundo) -->
+        <div class="feature">
+          <img id="featImg" src="portada.jpg" alt="El C&oacute;digo de los Constructores">
+          <h2 data-i18n="feat_title">EL C&Oacute;DIGO DE LOS CONSTRUCTORES</h2>
+          <div class="fsub" data-i18n="feat_sub">Sabidur&iacute;a mas&oacute;nica en clave. Un libro que no se lee: se descifra.</div>
+          <div class="price" data-i18n="c_price">$19.99 USD</div>
+          <div class="acts">
+            <a class="btn" href="#" id="featBuy" data-i18n="feat_buy">Conseguirlo en Amazon</a>
+            <a class="btn ghost" href="codigo.html" data-i18n="feat_more">Ver libro</a>
           </div>
         </div>
 
       </div>
-
     </section>
 
     <!-- BIO -->
@@ -193,17 +167,17 @@
   var EN={
     h1:"THE LIBRARY",
     sub:"Ancient wisdom for restless minds.<br>Each book, a key.",
-    badge:"&#9670; Flagship edition &#9670;",
+    v_title:"THE BUILDER'S JOURNEY",
+    v_sub:"A fable for those who build themselves.",
+    v_price:"Coming soon",
+    v_ebook:"Coming soon",
+    v_paper:"Coming soon",
+    v_more:"View book",
     feat_title:"THE BUILDERS' CODE",
     feat_sub:"Masonic wisdom in code. A book you don't read: you decipher it.",
+    c_price:"$19.99 USD",
     feat_buy:"Get it on Amazon",
     feat_more:"View book",
-    ph:"Cover soon",
-    b2_t:"The Builder's Journey",
-    b2_f:"Illustrated eBook &middot; Spanish",
-    b2_p:"$6.99 &middot; paperback soon",
-    b2_ebook:"eBook &middot; Amazon",
-    b2_more:"View book",
     eyebrow_bio:"Who's behind it",
     bio_p:"Creator of S&iacute;mbolos 360. He writes fables and books in code for those who seek something deeper: stories you read once and remember always. Initiated in ancient traditions, today he turns them into tales for everyone. He believes in quiet giving; he tries to make every work, too, a way to keep giving.",
     eyebrow_canal:"The Channel",
@@ -213,9 +187,10 @@
   };
   var TITLES={es:"S\u00edmbolos 360 \u2014 La Biblioteca", en:"S\u00edmbolos 360 \u2014 The Library"};
   var FEATIMG={es:"portada.jpg", en:"portada_en.jpg"};
-  var COV2={es:"viaje.jpg",en:"viaje_en.jpg"};
-  // Enlace Amazon del Código (insignia) por idioma. El Viaje usa enlace fijo en el HTML.
+  var VIAJEIMG={es:"viaje.jpg", en:"viaje_en.jpg"};
+  // Código: live en ambos idiomas. Viaje: live ES, "Coming soon" EN (aún no publicado en inglés).
   var AMZ_CODIGO={es:"https://www.amazon.com/dp/B0H64VY5PX", en:"https://a.co/d/05LHWelN"};
+  var VIAJE_BUY={es:"https://a.co/d/00bmLp1A", en:""};
   var els=document.querySelectorAll('[data-i18n]');
   var ES={};
   els.forEach(function(el){ ES[el.getAttribute('data-i18n')]=el.innerHTML; });
@@ -228,10 +203,12 @@
     var d=DICT[lang];
     els.forEach(function(el){ var k=el.getAttribute('data-i18n'); if(d[k]!=null) el.innerHTML=d[k]; });
     if(featImg){ featImg.src=FEATIMG[lang]; }
-    var c2=document.getElementById("cov2"); if(c2) c2.src=COV2[lang];
-    var url=AMZ_CODIGO[lang];
+    var vi=document.getElementById('viajeImg'); if(vi) vi.src=VIAJEIMG[lang];
     var fb=document.getElementById('featBuy');
-    if(fb){ fb.href=url; fb.target='_blank'; fb.rel='noopener'; }
+    if(fb){ fb.href=AMZ_CODIGO[lang]; fb.target='_blank'; fb.rel='noopener'; }
+    var vurl=VIAJE_BUY[lang], vlive=!!vurl;
+    document.querySelectorAll('.vbuy').forEach(function(b){ if(vlive){ b.classList.remove('disabled'); b.href=vurl; b.target='_blank'; b.rel='noopener'; } else { b.classList.add('disabled'); b.removeAttribute('href'); b.removeAttribute('target'); } });
+    var vp=document.getElementById('vPaper'); if(vp) vp.style.display=vlive?'':'none';
     document.querySelectorAll('.langtog button').forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-lang')===lang); });
     if(save){ try{localStorage.setItem('s360lang',lang);}catch(e){} }
   }
