@@ -187,11 +187,11 @@
     hint:"Fifteen stations. A single journey.",
     eyebrow_buy:"Get it",
     buy_fmt:"Illustrated edition &middot; English",
-    price_main:"Coming soon",
-    buyEbook:"Coming soon",
-    buyPaper:"Coming soon",
-    buyTop:"Coming soon",
-    soon_top:"&#9670; English edition soon &#9670;",
+    price_main:"eBook $6.99 &middot; Paperback soon",
+    buyEbook:"Get the eBook",
+    buyPaper:"Paperback &middot; coming soon",
+    buyTop:"Get the eBook on Amazon",
+    soon_top:"&#9670; eBook out now &middot; Paperback soon &#9670;",
     eyebrow_bio:"Who's behind it",
     bio_p:"Creator of S&iacute;mbolos 360. He writes fables and books in code for those who seek something deeper: stories you read once and remember always. Initiated in ancient traditions, today he turns them into tales for everyone. He believes in quiet giving; he tries to make every work, too, a way to keep giving.",
     eyebrow_canal:"The Channel",
@@ -208,7 +208,15 @@
   var DICT={es:ES,en:EN};
   var IMG={es:"viaje.jpg",en:"viaje_en.jpg"};
   var GAL={es:["viaje_p1.jpg","viaje_p2.jpg","viaje_p3.jpg"],en:["viaje_p1_en.jpg","viaje_p2_en.jpg","viaje_p3_en.jpg"]};
-  var BUY={es:"https://a.co/d/00bmLp1A",en:""};
+  var BUY={
+    es:{ebook:"https://a.co/d/00bmLp1A",paper:"https://a.co/d/00bmLp1A"},
+    en:{ebook:"https://a.co/d/0dmolySa",paper:""}
+  };
+  function applyBtn(btn,url){
+    if(!btn) return;
+    if(url){ btn.classList.remove('disabled'); btn.href=url; btn.target='_blank'; btn.rel='noopener'; }
+    else { btn.classList.add('disabled'); btn.removeAttribute('href'); btn.removeAttribute('target'); }
+  }
   function setLang(lang,save){
     if(lang!=='en') lang='es';
     document.documentElement.lang=lang;
@@ -217,9 +225,11 @@
     els.forEach(function(el){ var k=el.getAttribute('data-i18n'); if(d[k]!=null) el.innerHTML=d[k]; });
     var hero=document.getElementById('heroImg'); if(hero) hero.src=IMG[lang];
     var g=GAL[lang]; ['g1','g2','g3'].forEach(function(id,i){ var im=document.getElementById(id); if(im) im.src=g[i]; });
-    var url=BUY[lang], live=!!url;
-    document.querySelectorAll('.buybtn').forEach(function(b){ if(live){ b.classList.remove('disabled'); b.href=url; b.target='_blank'; b.rel='noopener'; } else { b.classList.add('disabled'); b.removeAttribute('href'); b.removeAttribute('target'); } });
-    var paper=document.getElementById('buyPaper'); if(paper) paper.style.display=live?'':'none';
+    var urls=BUY[lang];
+    applyBtn(document.getElementById('buyTop'), urls.ebook);
+    applyBtn(document.getElementById('buyEbook'), urls.ebook);
+    applyBtn(document.getElementById('buyPaper'), urls.paper);
+    var paper=document.getElementById('buyPaper'); if(paper) paper.style.display='';
     document.querySelectorAll('.langtog button').forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-lang')===lang); });
     if(save){ try{localStorage.setItem('s360lang',lang);}catch(e){} }
   }
