@@ -95,7 +95,7 @@
 
   <header class="hero">
     <div class="eyebrow" data-i18n="eyebrow_hero">F&aacute;bula inici&aacute;tica &middot; Amazon</div>
-    <img id="heroImg" src="viaje.jpg" alt="El Viaje del Constructor">
+    <img id="heroImg" src="viaje.jpg" alt="El Viaje del Constructor" onerror="if(this.src.indexOf('viaje_en')>-1){this.src='viaje.jpg';}">
     <h1 data-i18n="h1">EL VIAJE<br>DEL CONSTRUCTOR</h1>
     <div class="sub" data-i18n="sub">De la piedra bruta a la obra maestra.</div>
     <div class="hook" data-i18n="hook">Una f&aacute;bula para quien<br>se construye a s&iacute; mismo.</div>
@@ -123,9 +123,9 @@
     <section id="miradentro">
       <div class="eyebrow" data-i18n="eyebrow_gal">Mira dentro</div>
       <div class="gallery">
-        <div class="pg"><img src="viaje_p1.jpg" alt="L&aacute;mina interior: el mazo" loading="lazy" onerror="this.closest('.pg').style.display='none'"></div>
-        <div class="pg"><img src="viaje_p2.jpg" alt="L&aacute;mina interior: la regla" loading="lazy" onerror="this.closest('.pg').style.display='none'"></div>
-        <div class="pg"><img src="viaje_p3.jpg" alt="L&aacute;mina interior: la clave del arco" loading="lazy" onerror="this.closest('.pg').style.display='none'"></div>
+        <div class="pg"><img id="g1" src="viaje_p1.jpg" alt="L&aacute;mina interior: el mazo" loading="lazy" onerror="this.closest('.pg').style.display='none'"></div>
+        <div class="pg"><img id="g2" src="viaje_p2.jpg" alt="L&aacute;mina interior: la regla" loading="lazy" onerror="this.closest('.pg').style.display='none'"></div>
+        <div class="pg"><img id="g3" src="viaje_p3.jpg" alt="L&aacute;mina interior: la clave del arco" loading="lazy" onerror="this.closest('.pg').style.display='none'"></div>
       </div>
       <p class="hint" data-i18n="hint">Quince estaciones. Un solo viaje.</p>
     </section>
@@ -203,12 +203,16 @@
   var ES={};
   els.forEach(function(el){ ES[el.getAttribute('data-i18n')]=el.innerHTML; });
   var DICT={es:ES,en:EN};
+  var IMG={es:"viaje.jpg",en:"viaje_en.jpg"};
+  var GAL={es:["viaje_p1.jpg","viaje_p2.jpg","viaje_p3.jpg"],en:["viaje_p1_en.jpg","viaje_p2_en.jpg","viaje_p3_en.jpg"]};
   function setLang(lang,save){
     if(lang!=='en') lang='es';
     document.documentElement.lang=lang;
     document.title=TITLES[lang];
     var d=DICT[lang];
     els.forEach(function(el){ var k=el.getAttribute('data-i18n'); if(d[k]!=null) el.innerHTML=d[k]; });
+    var hero=document.getElementById('heroImg'); if(hero) hero.src=IMG[lang];
+    var g=GAL[lang]; ['g1','g2','g3'].forEach(function(id,i){ var im=document.getElementById(id); if(im) im.src=g[i]; });
     document.querySelectorAll('.langtog button').forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-lang')===lang); });
     if(save){ try{localStorage.setItem('s360lang',lang);}catch(e){} }
   }
