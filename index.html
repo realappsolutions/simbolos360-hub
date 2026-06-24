@@ -211,6 +211,7 @@
   };
   var TITLES={es:"S\u00edmbolos 360 \u2014 La Biblioteca", en:"S\u00edmbolos 360 \u2014 The Library"};
   var FEATIMG={es:"portada.jpg", en:"portada_en.jpg"};
+  var COV2={es:"viaje.jpg",en:"viaje_en.jpg"};
   // Enlace Amazon del Código (insignia) por idioma. El Viaje usa enlace fijo en el HTML.
   var AMZ_CODIGO={es:"https://www.amazon.com/dp/B0H64VY5PX", en:"https://a.co/d/05LHWelN"};
   var els=document.querySelectorAll('[data-i18n]');
@@ -225,6 +226,7 @@
     var d=DICT[lang];
     els.forEach(function(el){ var k=el.getAttribute('data-i18n'); if(d[k]!=null) el.innerHTML=d[k]; });
     if(featImg){ featImg.src=FEATIMG[lang]; }
+    var c2=document.getElementById("cov2"); if(c2) c2.src=COV2[lang];
     var url=AMZ_CODIGO[lang];
     var fb=document.getElementById('featBuy');
     if(fb){ fb.href=url; fb.target='_blank'; fb.rel='noopener'; }
