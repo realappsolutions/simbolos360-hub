@@ -169,9 +169,9 @@
     sub:"Ancient wisdom for restless minds.<br>Each book, a key.",
     v_title:"THE BUILDER'S JOURNEY",
     v_sub:"A fable for those who build themselves.",
-    v_price:"Coming soon",
-    v_ebook:"Coming soon",
-    v_paper:"Coming soon",
+    v_price:"eBook $6.99 &middot; Paperback soon",
+    v_ebook:"eBook &middot; Amazon",
+    v_paper:"Paperback &middot; soon",
     v_more:"View book",
     feat_title:"THE BUILDERS' CODE",
     feat_sub:"Masonic wisdom in code. A book you don't read: you decipher it.",
@@ -188,9 +188,17 @@
   var TITLES={es:"S\u00edmbolos 360 \u2014 La Biblioteca", en:"S\u00edmbolos 360 \u2014 The Library"};
   var FEATIMG={es:"portada.jpg", en:"portada_en.jpg"};
   var VIAJEIMG={es:"viaje.jpg", en:"viaje_en.jpg"};
-  // Código: live en ambos idiomas. Viaje: live ES, "Coming soon" EN (aún no publicado en inglés).
   var AMZ_CODIGO={es:"https://www.amazon.com/dp/B0H64VY5PX", en:"https://a.co/d/05LHWelN"};
-  var VIAJE_BUY={es:"https://a.co/d/00bmLp1A", en:""};
+  // Viaje: ES eBook+paper live (misma pagina). EN: eBook live, tapa blanda en revision KDP.
+  var VIAJE_BUY={
+    es:{ebook:"https://a.co/d/00bmLp1A", paper:"https://a.co/d/00bmLp1A"},
+    en:{ebook:"https://a.co/d/0dmolySa", paper:""}
+  };
+  function applyV(btn,url){
+    if(!btn) return;
+    if(url){ btn.classList.remove('disabled'); btn.href=url; btn.target='_blank'; btn.rel='noopener'; }
+    else { btn.classList.add('disabled'); btn.removeAttribute('href'); btn.removeAttribute('target'); }
+  }
   var els=document.querySelectorAll('[data-i18n]');
   var ES={};
   els.forEach(function(el){ ES[el.getAttribute('data-i18n')]=el.innerHTML; });
@@ -206,9 +214,10 @@
     var vi=document.getElementById('viajeImg'); if(vi) vi.src=VIAJEIMG[lang];
     var fb=document.getElementById('featBuy');
     if(fb){ fb.href=AMZ_CODIGO[lang]; fb.target='_blank'; fb.rel='noopener'; }
-    var vurl=VIAJE_BUY[lang], vlive=!!vurl;
-    document.querySelectorAll('.vbuy').forEach(function(b){ if(vlive){ b.classList.remove('disabled'); b.href=vurl; b.target='_blank'; b.rel='noopener'; } else { b.classList.add('disabled'); b.removeAttribute('href'); b.removeAttribute('target'); } });
-    var vp=document.getElementById('vPaper'); if(vp) vp.style.display=vlive?'':'none';
+    var vb=VIAJE_BUY[lang];
+    applyV(document.getElementById('vEbook'), vb.ebook);
+    applyV(document.getElementById('vPaper'), vb.paper);
+    var vp=document.getElementById('vPaper'); if(vp) vp.style.display='';
     document.querySelectorAll('.langtog button').forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-lang')===lang); });
     if(save){ try{localStorage.setItem('s360lang',lang);}catch(e){} }
   }
