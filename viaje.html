@@ -47,6 +47,7 @@
   .btn{display:inline-block;background:linear-gradient(180deg,#e3c98e,#bd9a5c);color:var(--ink);font-family:'Cinzel',serif;font-weight:700;letter-spacing:.07em;text-transform:uppercase;font-size:.85rem;padding:16px 36px;border-radius:9px;text-decoration:none;box-shadow:0 10px 28px rgba(194,160,106,.35);transition:transform .15s}
   .btn:active{transform:scale(.97)}
   .btn.ghost{background:transparent;color:var(--gold);border:1px solid var(--gold);box-shadow:none}
+  .btn.disabled{background:transparent;color:var(--gold-soft);border:1px solid var(--line);box-shadow:none;cursor:default;opacity:.6;pointer-events:none}
   .soon{display:block;margin-top:14px;font-size:.8rem;color:var(--gold-soft);opacity:.7;font-style:italic;letter-spacing:.04em}
   section{padding:46px 0}
   .eyebrow{text-align:center;color:var(--gold);font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;margin-bottom:22px}
@@ -99,8 +100,8 @@
     <h1 data-i18n="h1">EL VIAJE<br>DEL CONSTRUCTOR</h1>
     <div class="sub" data-i18n="sub">De la piedra bruta a la obra maestra.</div>
     <div class="hook" data-i18n="hook">Una f&aacute;bula para quien<br>se construye a s&iacute; mismo.</div>
-    <a class="btn" href="https://a.co/d/0dkougWk" id="buyTop" target="_blank" rel="noopener" data-i18n="buyTop">Conseguir el eBook</a>
-    <span class="soon" data-i18n="soon_top">&#9670; Tapa blanda muy pronto &#9670;</span>
+    <a class="btn buybtn" href="https://a.co/d/00bmLp1A" id="buyTop" target="_blank" rel="noopener" data-i18n="buyTop">Conseguir en Amazon</a>
+    <span class="soon" data-i18n="soon_top">&#9670; eBook &middot; Tapa blanda &#9670;</span>
   </header>
 
   <div class="wrap">
@@ -133,10 +134,10 @@
     <section>
       <div class="buybox">
         <div class="eyebrow" style="margin-bottom:18px" data-i18n="eyebrow_buy">Cons&iacute;guelo</div>
-        <div class="price">$6.99 USD</div>
-        <div class="fmt" data-i18n="buy_fmt">eBook Kindle &middot; Espa&ntilde;ol &middot; ilustrado</div>
-        <a class="btn" href="https://a.co/d/0dkougWk" id="buyMain" target="_blank" rel="noopener" data-i18n="buyMain">Conseguir el eBook</a>
-        <span class="soon" data-i18n="soon_main">&#9670; Tapa blanda ($19.99) muy pronto &#9670;</span>
+        <div class="price" data-i18n="price_main">eBook $6.99 &middot; Tapa blanda $19.99</div>
+        <div class="fmt" data-i18n="buy_fmt">Edici&oacute;n ilustrada &middot; Espa&ntilde;ol</div>
+        <a class="btn buybtn" href="https://a.co/d/00bmLp1A" id="buyEbook" target="_blank" rel="noopener" data-i18n="buyEbook">Conseguir el eBook</a>
+        <a class="btn buybtn" href="https://a.co/d/00bmLp1A" id="buyPaper" target="_blank" rel="noopener" data-i18n="buyPaper" style="margin-top:10px">Conseguir tapa blanda</a>
       </div>
     </section>
 
@@ -184,11 +185,12 @@
     eyebrow_gal:"Look inside",
     hint:"Fifteen stations. A single journey.",
     eyebrow_buy:"Get it",
-    buy_fmt:"Kindle eBook &middot; Spanish &middot; illustrated",
-    buyMain:"Get the eBook",
-    soon_main:"&#9670; Paperback ($19.99) coming very soon &#9670;",
-    buyTop:"Get the eBook",
-    soon_top:"&#9670; Paperback coming very soon &#9670;",
+    buy_fmt:"Illustrated edition &middot; English",
+    price_main:"Coming soon",
+    buyEbook:"Coming soon",
+    buyPaper:"Coming soon",
+    buyTop:"Coming soon",
+    soon_top:"&#9670; English edition soon &#9670;",
     eyebrow_bio:"Who's behind it",
     bio_p:"Master Mason and initiate of the Rosicrucian Order. Creator of S&iacute;mbolos 360. Before the books, he already gave anniversary cakes to entire lodges and supported children in need; today he turns every work into a way to keep giving.",
     eyebrow_canal:"The Channel",
@@ -205,6 +207,7 @@
   var DICT={es:ES,en:EN};
   var IMG={es:"viaje.jpg",en:"viaje_en.jpg"};
   var GAL={es:["viaje_p1.jpg","viaje_p2.jpg","viaje_p3.jpg"],en:["viaje_p1_en.jpg","viaje_p2_en.jpg","viaje_p3_en.jpg"]};
+  var BUY={es:"https://a.co/d/00bmLp1A",en:""};
   function setLang(lang,save){
     if(lang!=='en') lang='es';
     document.documentElement.lang=lang;
@@ -213,6 +216,9 @@
     els.forEach(function(el){ var k=el.getAttribute('data-i18n'); if(d[k]!=null) el.innerHTML=d[k]; });
     var hero=document.getElementById('heroImg'); if(hero) hero.src=IMG[lang];
     var g=GAL[lang]; ['g1','g2','g3'].forEach(function(id,i){ var im=document.getElementById(id); if(im) im.src=g[i]; });
+    var url=BUY[lang], live=!!url;
+    document.querySelectorAll('.buybtn').forEach(function(b){ if(live){ b.classList.remove('disabled'); b.href=url; b.target='_blank'; b.rel='noopener'; } else { b.classList.add('disabled'); b.removeAttribute('href'); b.removeAttribute('target'); } });
+    var paper=document.getElementById('buyPaper'); if(paper) paper.style.display=live?'':'none';
     document.querySelectorAll('.langtog button').forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-lang')===lang); });
     if(save){ try{localStorage.setItem('s360lang',lang);}catch(e){} }
   }
